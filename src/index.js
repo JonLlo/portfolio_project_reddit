@@ -3,36 +3,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { Card } from './components/Card/Card';
+import { Home } from './features/Home/Home';
+import { createStore, combineReducers } from 'redux';
+import { postsReducer } from './reducers/postsReducer'; // Import your postsReducer
+import { counterReducer } from './reducers/counterReducer'
 
-// Initial state
-const initialState = {
-  counter: 500
-};
-
-// Reducer function
-function counterReducer(state = initialState, action) {
-  switch (action.type) {
-    case "increment":
-      return { counter: state.counter + action.payload };
-    case "decrement":
-      return { counter: state.counter - action.payload };
-    case "divide":
-      return { counter: state.counter / action.payload };
-    case "multiply":
-        return { counter: state.counter * action.payload };
-    case "squared":
-        return { counter: state.counter ** action.payload };
-    case "reset":
-        return { counter: initialState.counter };
-    default:
-      return state;
-  }
-}
 
 // Redux store
-const store = createStore(counterReducer);
+const rootReducer = combineReducers({
+  posts: postsReducer, // This key 'posts' will be used to access the posts slice of state
+  // Add other reducers here if needed
+  counter: counterReducer
+});
+
+const store = createStore(rootReducer);
 
 // Action creators
 export const increment = () => ({
@@ -67,6 +53,7 @@ ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <App />
+      <Home />
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')
