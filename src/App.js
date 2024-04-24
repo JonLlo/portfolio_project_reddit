@@ -6,9 +6,10 @@ import { increment, decrement, divide, multiply, squared, reset} from './index';
 
 
 
+
 function App() {
   const dispatch = useDispatch();
-  const counter = useSelector(state => state.counter); // Accessing the counter state from Redux store
+  const count = useSelector(state => state.counter_red.counter); // Accessing the counter state from Redux store
 
   const handleIncrement = () => {
     dispatch(increment()); // Dispatch increment action
@@ -43,7 +44,7 @@ function App() {
       <button onClick={handleSquared}>Square</button>
       <br></br>
       <button onClick={Reset}>Reset</button>
-      <p> state: {counter}</p>
+      <p> state: {count}</p>
       
 
     </div>

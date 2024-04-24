@@ -1,10 +1,11 @@
+
 // Initial state
 const initialState = {
     counter: 500
   };
   
   // Reducer function
-  function counterReducer(state = initialState, action) {
+export function counterReducer(state = initialState, action) {
     switch (action.type) {
       case "increment":
         return { counter: state.counter + action.payload };
@@ -22,3 +23,5 @@ const initialState = {
         return state;
     }
   }
+
+

@@ -8,17 +8,17 @@ import { Card } from './components/Card/Card';
 import { Home } from './features/Home/Home';
 import { createStore, combineReducers } from 'redux';
 import { postsReducer } from './reducers/postsReducer'; // Import your postsReducer
-import { counterReducer } from './reducers/counterReducer'
+import { counterReducer } from './reducers/counterReducer';
 
 
 // Redux store
-const rootReducer = combineReducers({
-  posts: postsReducer, // This key 'posts' will be used to access the posts slice of state
+export const rootReducer = combineReducers({
+  posts_red: postsReducer, // This key 'posts' will be used to access the posts slice of state
   // Add other reducers here if needed
-  counter: counterReducer
+  counter_red: counterReducer
 });
 
-const store = createStore(rootReducer);
+export const store = createStore(rootReducer);
 
 // Action creators
 export const increment = () => ({
@@ -60,5 +60,3 @@ ReactDOM.render(
 );
 
 // Log initial state and subscribe to store changes
-console.log(store.getState());
-store.subscribe(() => console.log("Store is changed and state is", store.getState()));
