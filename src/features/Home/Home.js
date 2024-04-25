@@ -8,7 +8,7 @@ import './Home.css';
 export const Home = () => {
   const dispatch = useDispatch();
   const posts = useSelector(state => state.posts_red.posts); // Assuming you have a posts slice in your Redux store
-  
+  const com = useSelector(state => state.posts_red.comments)
   useEffect(() => {
     // Fetch subreddit posts when the component mounts
     const fetchPosts = async () => {
@@ -28,26 +28,6 @@ export const Home = () => {
   }, [dispatch]); // Include dispatch in the dependency array to prevent useEffect from running infinitely
 
 
- /* useEffect(() => {
-    // Fetch subreddit posts when the component mounts
-    const fetchComments = async () => {
-      try {
-        const subreddit = '/r/FantasyPL'; // Example subreddit (replace with your desired subreddit)
-        const subredditComments = await getSubredditComments(subreddit);
-        // Dispatch an action to store the fetched posts in Redux
-        dispatch({ type: 'FETCH_POSTS_SUCCESS', payload: subredditComments });
-      } catch (error) {
-        console.error('Error fetching subreddit posts:', error);
-        // Dispatch an action to handle the error
-        dispatch({ type: 'FETCH_POSTS_FAILURE', payload: error.message });
-      }
-    };
-
-    fetchComments(); // Call the fetchPosts function
-  }, [dispatch]); // In
-
-*/
-
 
 
   return (
@@ -56,7 +36,7 @@ export const Home = () => {
       <ul>
         {posts.map(post => (
           <li>
-            <Post post={post}/>
+            <Post post={post} comments={com}/>
           </li>
         ))}
       </ul>
