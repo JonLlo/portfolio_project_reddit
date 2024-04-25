@@ -9,13 +9,15 @@ import { Home } from './features/Home/Home';
 import { createStore, combineReducers } from 'redux';
 import { postsReducer } from './reducers/postsReducer'; // Import your postsReducer
 import { counterReducer } from './reducers/counterReducer';
+import { commentsReducer } from './reducers/commentsReducer';
 
 
 // Redux store
 export const rootReducer = combineReducers({
   posts_red: postsReducer, // This key 'posts' will be used to access the posts slice of state
   // Add other reducers here if needed
-  counter_red: counterReducer
+  counter_red: counterReducer,
+  comments_red: commentsReducer
 });
 
 export const store = createStore(rootReducer);

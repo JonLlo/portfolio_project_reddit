@@ -15,5 +15,5 @@
 .card:hover {
   box-shadow: var(--box-shadow-hover);
   color: green;
-  font-size: larger;
+  
 }
