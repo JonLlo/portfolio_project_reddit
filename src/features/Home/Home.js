@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Post } from '../Post/Post';
 import { getSubredditPosts} from '../../api/reddit'; // Import the API function
 import './Home.css';
+import { Sidebar }from '../Sidebar/Sidebar';
 
 
 export const Home = () => {
@@ -32,11 +33,12 @@ export const Home = () => {
 
   return (
     <div className="home">
+      <Sidebar></Sidebar>
       <h1>Reddit Posts</h1>
       <ul>
         {posts.map(post => (
           <li>
-            <Post post={post} comments={com}/>
+            <Post post={post}/>
           </li>
         ))}
       </ul>

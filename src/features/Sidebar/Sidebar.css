@@ -1,0 +1,14 @@
+.sidebar {
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  align-items: flex-start; /* Align items to the start of the container (left side) */
+  width: 75%; /* Set the width of the sidebar to 75% of the page */
+}
+
+.sidebar h2 {
+  margin-left: auto; /* Push the h2 to the end of the container (right side) */
+}
+.sidebar button {
+  margin-left: auto; /* Push the h2 to the end of the container (right side) */
+}
+
