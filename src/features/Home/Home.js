@@ -10,11 +10,11 @@ export const Home = () => {
   const dispatch = useDispatch();
   const posts = useSelector(state => state.posts_red.posts); // Assuming you have a posts slice in your Redux store
   const com = useSelector(state => state.posts_red.comments)
+  const subreddit = useSelector(state => state.subreddit_red.subreddit)
   useEffect(() => {
     // Fetch subreddit posts when the component mounts
     const fetchPosts = async () => {
       try {
-        const subreddit = '/r/FantasyPL'; // Example subreddit (replace with your desired subreddit)
         const subredditPosts = await getSubredditPosts(subreddit);
         // Dispatch an action to store the fetched posts in Redux
         dispatch({ type: 'FETCH_POSTS_SUCCESS', payload: subredditPosts });
@@ -26,14 +26,14 @@ export const Home = () => {
     };
 
     fetchPosts(); // Call the fetchdPosts function
-  }, [dispatch]); // Include dispatch in the dependency array to prevent useEffect from running infinitely
+  }, [dispatch, subreddit]); // Include dispatch in the dependency array to prevent useEffect from running infinitely
 
 
 
 
   return (
     <div className="home">
-      <Sidebar></Sidebar>
+      <Sidebar/>
       <h1>Reddit Posts</h1>
       <ul>
         {posts.map(post => (

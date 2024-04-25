@@ -1,21 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Sidebar.css';
+import { useDispatch } from 'react-redux';
+import { changeSubreddit } from '../../reducers/subredditReducer'; // Import the action creator
 
 export const Sidebar = () => {
+  const dispatch = useDispatch();
+
+  // Function to handle click on Arsenal button
+  const handleArsenalClick = () => {
+    dispatch(changeSubreddit('/r/arsenal')); // Dispatch action to change subreddit
+  };
+
+  // Function to handle click on Man City button
+  const handleManCityClick = () => {
+    dispatch(changeSubreddit('/r/ManCity')); // Dispatch action to change subreddit
+  };
+
   return (
     <div className="sidebar">
       <h2>Subreddits</h2>
-        <button>Arsenal</button>
-        <button>Man City</button>
+      <button onClick={handleArsenalClick}>Arsenal</button>
+      <button onClick={handleManCityClick}>Man City</button>
     </div>
   );
 };
-
-
-
-/*
-<li><Link to="/r/reactjs">/r/reactjs</Link></li>
-<li><Link to="/r/javascript">/r/javascript</Link></li>
-
-*/
