@@ -25,7 +25,7 @@ export const Home = () => {
       }
     };
 
-    fetchPosts(); // Call the fetchPosts function
+    fetchPosts(); // Call the fetchdPosts function
   }, [dispatch]); // Include dispatch in the dependency array to prevent useEffect from running infinitely
 
 
