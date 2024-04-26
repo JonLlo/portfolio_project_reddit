@@ -13,6 +13,7 @@ import { commentsReducer } from './reducers/commentsReducer';
 import { subredditReducer } from './reducers/subredditReducer';
 import { Sidebar } from './features/Sidebar/Sidebar';
 import { Header } from './features/Header/Header';
+import { searchTermReducer } from './reducers/searchtermReducer';
 
 
 // Redux store
@@ -21,7 +22,8 @@ export const rootReducer = combineReducers({
   // Add other reducers here if needed
   counter_red: counterReducer,
   comments_red: commentsReducer,
-  subreddit_red: subredditReducer
+  subreddit_red: subredditReducer,
+  searchterm_red: searchTermReducer
 });
 
 export const store = createStore(rootReducer);
