@@ -1,36 +1,40 @@
 
 import { useDispatch } from 'react-redux';
 import React, { useState } from 'react';
+import { setSearchTerm } from '../../reducers/searchtermReducer';
+
 
 
 
 export const Header = () => {
 
   const dispatch = useDispatch();
-  const [searchValue, setSearchValue] = useState('');
+  const [searchTermLocal, setSearchTermLocal] = useState('');
 
 
-  const handleSubredditChange = (searchValue) => {
-    // Do whatever you need with the subreddit value
-    console.log('Selected subreddit:');
-    //Now we want to update the posts that are showing
+  const onSearchTermChange = (e) => {
+    setSearchTermLocal(e.target.value);
   };
 
-
-  const handleChange = (event) => {
-    setSearchValue(event.target.value);
+  const onSearchTermSubmit = (e) => {
+    e.preventDefault();
+    dispatch(setSearchTerm(searchTermLocal));
   };
 
   return (
-    <form onSubmit={(event) => handleSubredditChange(searchValue)}>
-<input
-  type="text"
-  placeholder="Search posts..."
-  value={searchValue}
-  onChange={handleChange} //letters show in box when you type them
-  
-/>
-    <button type="submit">Search</button>
-  </form>
+    <header>
+      <form className="search" onSubmit={onSearchTermSubmit}>
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchTermLocal}
+          onChange={onSearchTermChange}
+          aria-label="Search posts"
+        />
+        <button type="submit" aria-label="Search">
+          Search
+        </button>
+      </form>
+    </header>
   );
 };
