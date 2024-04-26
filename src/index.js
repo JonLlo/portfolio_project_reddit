@@ -12,7 +12,7 @@ import { counterReducer } from './reducers/counterReducer';
 import { commentsReducer } from './reducers/commentsReducer';
 import { subredditReducer } from './reducers/subredditReducer';
 import { Sidebar } from './features/Sidebar/Sidebar';
-import { Header } from './features/Header/header';
+import { Header } from './features/Header/Header';
 
 
 // Redux store
