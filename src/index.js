@@ -12,6 +12,7 @@ import { counterReducer } from './reducers/counterReducer';
 import { commentsReducer } from './reducers/commentsReducer';
 import { subredditReducer } from './reducers/subredditReducer';
 import { Sidebar } from './features/Sidebar/Sidebar';
+import { Header } from './features/Header/header';
 
 
 // Redux store
@@ -39,6 +40,7 @@ export const reset = () => ({
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
+      <Header />
       <App/>
       <Sidebar/>
       <Home />
