@@ -10,9 +10,10 @@ export const Header = () => {
   const [searchValue, setSearchValue] = useState('');
 
 
-  const handleSubredditChange = (searchValue ) => {
+  const handleSubredditChange = (searchValue) => {
     // Do whatever you need with the subreddit value
-    console.log('Selected subreddit:', searchValue);
+    console.log('Selected subreddit:');
+    //Now we want to update the posts that are showing
   };
 
 
