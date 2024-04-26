@@ -9,7 +9,7 @@ import { Sidebar }from '../Sidebar/Sidebar';
 export const Home = () => {
   const dispatch = useDispatch();
   const posts = useSelector(state => state.posts_red.posts); // Assuming you have a posts slice in your Redux store
-  const com = useSelector(state => state.posts_red.comments)
+  //const com = useSelector(state => state.posts_red.comments)
   const subreddit = useSelector(state => state.subreddit_red.subreddit)
   useEffect(() => {
     // Fetch subreddit posts when the component mounts
@@ -33,7 +33,6 @@ export const Home = () => {
 
   return (
     <div className="home">
-      <Sidebar/>
       <h1>Reddit Posts</h1>
       <ul>
         {posts.map(post => (

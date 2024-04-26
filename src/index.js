@@ -11,6 +11,7 @@ import { postsReducer } from './reducers/postsReducer'; // Import your postsRedu
 import { counterReducer } from './reducers/counterReducer';
 import { commentsReducer } from './reducers/commentsReducer';
 import { subredditReducer } from './reducers/subredditReducer';
+import { Sidebar } from './features/Sidebar/Sidebar';
 
 
 // Redux store
@@ -34,10 +35,12 @@ export const reset = () => ({
 });
 
 // Render the app
+
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+      <App/>
+      <Sidebar/>
       <Home />
     </React.StrictMode>
   </Provider>,
