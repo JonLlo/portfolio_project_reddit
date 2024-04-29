@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello Redux</h1>
+      <h1>Hello Redux!!</h1>
       <button onClick={handleIncrement}>Increment by 1</button>
       <button onClick={Reset}>Reset</button>
       <p> state: {count}</p>
