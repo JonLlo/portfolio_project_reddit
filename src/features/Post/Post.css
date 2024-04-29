@@ -24,6 +24,7 @@
 .post-image-container {
   width: 100%;
   overflow: hidden;
+  max-width: 20%;
   border-radius: var(--radius-2);
 }
 
@@ -111,4 +112,13 @@
 
 .showing-comments {
   color: var(--color-branding);
+}
+
+
+.post-image {
+  /* Ensure the image stays within the boundaries of its parent container */
+  max-width: 100%; /* Ensure the image does not exceed the width of its container */
+  height: auto; /* Allow the image to maintain its aspect ratio */
+
+
 }

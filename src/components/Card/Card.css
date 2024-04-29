@@ -1,15 +1,23 @@
 .card {
   background: green;
+  display: flex;
+  justify-content: start;
   box-shadow: var(--box-shadow);
   margin-bottom: 20px;
   border-radius: 32px;
-  width: 50%;
+  width: 70%;
   padding: 20px;
   transition: box-shadow 0.1s ease-in;
   color: blue;
   background-color: yellow;
-  text-align: center;
-  justify-content: center;
+  
+
+    /* Ensure that the card has a defined size and can contain its contents */
+  /* Adjust the width as needed */
+    height: auto; /* or a fixed height if preferred */
+  
+    /* Add overflow property to prevent the image from overflowing */
+    overflow: hidden;
 }
 
 .card:hover {
@@ -17,3 +25,5 @@
   color: green;
   
 }
+
+

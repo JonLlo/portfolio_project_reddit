@@ -42,11 +42,15 @@ export const Post = ({ post }) => {
           <p>Author: {post.author}</p>
           <p>{post.body}</p>
           <p>Number of Comments: {post.num_comments}</p>
+          <div>
+              <img src={post.url} alt="" className="post-image" />
+            </div>
           <button onClick={toggleComments}>
             {showComments ? 'Hide Comments' : 'Show Comments'}
           </button>
         </div>
       </Card>
+
       {showComments && (
         <div>
           <h3>Comments</h3>
