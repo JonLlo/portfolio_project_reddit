@@ -34,8 +34,13 @@ export const increment = () => ({
   payload: 1
 });
 export const reset = () => ({
-  type: "reset",
+  type: "reset"
 });
+export const multiply = () => ({
+  type: "multiply",
+  payload: 2
+});
+
 
 // Render the app
 

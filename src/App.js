@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { increment,reset} from './index';
+import { increment, reset, multiply } from './index';
 
 
 
@@ -18,6 +18,10 @@ function App() {
     dispatch(reset()); // Dispatch decrement action
   };
 
+  const Multiply = () => {
+    dispatch(multiply());
+  };
+
 
 
   return (
@@ -25,9 +29,8 @@ function App() {
       <h1>Hello Redux!!</h1>
       <button onClick={handleIncrement}>Increment by 1</button>
       <button onClick={Reset}>Reset</button>
+      <button onClick={Multiply}>Multiply</button>
       <p> state: {count}</p>
-      
-
     </div>
   );
 };

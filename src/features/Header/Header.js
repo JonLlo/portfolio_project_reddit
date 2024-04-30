@@ -26,7 +26,7 @@ export const Header = () => {
       <form className="search" onSubmit={onSearchTermSubmit}>
         <input
           type="text"
-          placeholder="Search"
+          placeholder="search"
           value={searchTermLocal}
           onChange={onSearchTermChange}
           aria-label="Search posts"
