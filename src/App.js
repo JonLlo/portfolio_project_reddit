@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello Redux!!</h1>
+      <h1>Hello There</h1>
       <button onClick={handleIncrement}>Increment by 1</button>
       <button onClick={Reset}>Reset</button>
       <button onClick={Multiply}>Multiply</button>
