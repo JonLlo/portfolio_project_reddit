@@ -1,7 +1,7 @@
 {
   "name": "my_reddit_app",
   "version": "0.1.0",
-  "homepage": "https://JonLlo.github.io/reddit_pp",
+  "homepage": "https://jonllo.github.io/reddit_pp",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
